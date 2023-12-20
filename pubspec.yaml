@@ -1,7 +1,7 @@
 name: json_parse_model
-description: A starting point for Dart libraries or applications.
+description: A package for convert from json to model by http api
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/moweiran/json_parse_model.git
 
 environment:
   sdk: ^3.2.3
