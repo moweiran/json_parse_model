@@ -59,7 +59,7 @@ class Json2ModelPrintBuilder implements Builder {
 
   @override
   Map<String, List<String>> get buildExtensions => {
-        '^assets/json/{{}}.json': ["lib/models/{{}}.dart"]
+        '^assets/json/{{}}.json': ["lib/json2model_gen/{{}}.dart"]
       };
 }
 

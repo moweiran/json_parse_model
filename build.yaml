@@ -8,7 +8,7 @@ builders:
     import: "package:json_parse_model/builder.dart"
     builder_factories: 
       - "json2ModelPrintBuilder"
-    build_extensions: {"^assets/json/{{}}.json": ["lib/models/{{}}.dart"]}
+    build_extensions: {"^assets/json/{{}}.json": ["lib/json2model_gen/{{}}.dart"]}
     build_to: source
     auto_apply: root_package
     defaults:
