@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      json2model|json2ModelPrintBuilder:
+        enabled: True
+builders:
+  json2ModelPrintBuilder:
+    import: "package:json2model/builder.dart"
+    builder_factories: 
+      - "json2ModelPrintBuilder"
+    build_extensions: {"^assets/json/{{}}.json": ["lib/models/{{}}.dart"]}
+    build_to: source
+    auto_apply: root_package
+    defaults:
+      generate_for: 
+        include:
+        exclude:
