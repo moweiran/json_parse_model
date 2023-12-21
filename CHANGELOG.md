@@ -1,3 +1,7 @@
+## 1.0.6
+
+- chang readme for install and usage.
+
 ## 1.0.5
 
 - change readme.
