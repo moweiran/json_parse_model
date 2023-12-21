@@ -1,10 +1,10 @@
 targets:
   $default:
     builders:
-      json_parse_model|json2ModelPrintBuilder:
+      json_parse_model|json:
         enabled: True
 builders:
-  json2ModelPrintBuilder:
+  json:
     import: "package:json_parse_model/builder.dart"
     builder_factories: 
       - "json2ModelPrintBuilder"

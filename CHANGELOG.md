@@ -1,3 +1,8 @@
+## 1.0.4
+
+- 1. used options for build.
+- 2. custom command line for global to generate json model.
+
 ## 1.0.3
 
 - change generate folder

@@ -1,6 +1,6 @@
 name: json_parse_model
 description: A package for convert from json to model by http api
-version: 1.0.3
+version: 1.0.4
 repository: https://github.com/moweiran/json_parse_model.git
 
 environment:
@@ -8,6 +8,7 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  args: ^2.4.2
   build: ^2.4.1
   code_builder: ^4.9.0
   dart_style: ^2.3.4
@@ -16,5 +17,9 @@ dependencies:
   # path: ^1.8.0
 
 dev_dependencies:
+  build_runner: ^2.4.7
   lints: ^2.1.0
   test: ^1.24.0
+
+executables:
+  json:

@@ -10,8 +10,19 @@ class HttpParse {
   HttpParse._();
   static final instance = HttpParse._();
   JsonBuildConfig? buildConfig;
-  Future<Map<String, dynamic>> get(String api) async {
-    buildConfig ??= await loadConfigs();
+  Future<Map<String, dynamic>> get(
+    String api, {
+    String? host,
+    String? token,
+  }) async {
+    if (host != null && host.isNotEmpty && token != null && token.isNotEmpty) {
+      print('read buid config from options');
+      buildConfig = JsonBuildConfig(host: host, token: token);
+    } else {
+      print('read buid config from yaml file');
+      buildConfig ??= await loadConfigs();
+    }
+
     if (buildConfig!.host.isEmpty || buildConfig!.token.isEmpty) {
       return {};
     }
