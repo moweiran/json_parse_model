@@ -1,6 +1,6 @@
 name: json_parse_model
 description: A package for convert from json to model by http api
-version: 1.0.4
+version: 1.0.5
 repository: https://github.com/moweiran/json_parse_model.git
 
 environment:
