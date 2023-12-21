@@ -25,6 +25,32 @@ A package for convert from json to model by http api
     flutter pub add json_parse_model -d
     flutter pub add build_runner -d
 
+## 1. Add json2model.yaml to root path, the file format like below
+
+    host: <host>
+    token: <token>
+
+example:
+
+    host: http://www.baidu.com/api
+    token: xxxlxlxlxlx.lxlxlxl.xlxlx.xlxlxlxlx
+
+## 2. Add json file to assets/json/xxx.json, the format like below
+
+    {
+        "api": "<your api path>",
+        "outpath": "lib/json2model_gen/<model_file_name>.dart",
+        "className": "<modelName>"
+    }
+
+example:
+
+    {
+        "api": "/api/v1/healing",
+        "outpath": "lib/json2model_gen/healing.dart",
+        "className": "Healing"
+    }
+
 # Run build to generate json model.
 
 ## 1. Used as Package

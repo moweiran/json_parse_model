@@ -1,3 +1,8 @@
+## 1.0.7
+
+- add more information for install
+- add github action for automated publishing
+
 ## 1.0.6
 
 - chang readme for install and usage.
