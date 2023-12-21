@@ -16,6 +16,7 @@ A package for convert from json to model by http api
 ## Features
 
 A package for convert from json to model by http api
+![截屏2023-12-21 16 38 44](https://github.com/moweiran/json_parse_model/assets/8222923/1712ab34-e1cc-4477-9e05-338fdc210e32)
 
 ## Getting started
 
