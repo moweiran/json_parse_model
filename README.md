@@ -12,6 +12,7 @@ and the Flutter guide for
 -->
 
 A package for convert from json to model by http api
+
 [![pub package](https://img.shields.io/pub/v/json_parse_model.svg?color=blue)](https://pub.dev/packages/json_parse_model) [![json_parse_model package](https://img.shields.io/github/v/tag/moweiran/json_parse_model?color=blue&label=json_parse_model)](https://github.com/moweiran/json_parse_model) [![issues-closed](https://img.shields.io/github/issues-closed/moweiran/json_parse_model?color=green)](https://github.com/moweiran/json_parse_model/issues?q=is%3Aissue+is%3Aclosed) [![issues-open](https://img.shields.io/github/issues-raw/moweiran/json_parse_model)](https://github.com/moweiran/json_parse_model/issues)
 
 ## Features
