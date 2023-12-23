@@ -1,4 +1,4 @@
-## 1.0.8
+## 1.0.9
 - json_parse_model readme link
 ## 1.0.7
 
