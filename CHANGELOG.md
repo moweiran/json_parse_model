@@ -1,3 +1,7 @@
+## 1.1.1
+
+- support json data source from json file
+
 ## 1.1.0
 
 - add logging

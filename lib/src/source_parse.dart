@@ -7,7 +7,7 @@ class SourceParse {
   static final instance = SourceParse._();
 
   JsonSourceConfig parse(String source) {
-    final result = (json.decode(source) as Map).cast<String, String>();
+    final result = (json.decode(source) as Map).cast<String, dynamic>();
     return JsonSourceConfig.fromJson(result);
   }
 }

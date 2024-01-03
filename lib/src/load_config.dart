@@ -7,7 +7,7 @@ import 'build_config.dart';
 import 'builder.dart';
 
 Future<JsonBuildConfig> loadConfigs() async {
-  logger.info('start load config');
+  jlogger.info('start load config');
   final File file = File.fromUri(Uri.file("json2model.yaml"));
   if (await file.exists()) {
     final config = await file.readAsString();
@@ -15,7 +15,7 @@ Future<JsonBuildConfig> loadConfigs() async {
     final jsonString = json.encode(doc);
     return JsonBuildConfig.fromJson(json.decode(jsonString));
   } else {
-    logger
+    jlogger
         .info("Environment variable file doesn't exist at `json2model.yaml`.");
     return JsonBuildConfig(host: '', token: '');
   }

@@ -21,10 +21,10 @@ class HttpParse {
           host.isNotEmpty &&
           token != null &&
           token.isNotEmpty) {
-        logger.info('read buid config from options');
+        jlogger.info('read buid config from options');
         buildConfig = JsonBuildConfig(host: host, token: token);
       } else {
-        logger.info('read buid config from yaml file');
+        jlogger.info('read buid config from yaml file');
         buildConfig ??= await loadConfigs();
       }
 
@@ -36,10 +36,11 @@ class HttpParse {
       var response = await http.get(uri, headers: {
         HttpHeaders.authorizationHeader: 'Bearer ${buildConfig!.token}',
       });
-      logger.info('$url =>\n ${response.body}');
+      // logger.info('$url =>\n ${response.body}');
+      jlogger.info('$url =>\n ${response.body}');
       return json.decode(response.body);
     } catch (e, s) {
-      logger.warning('httpParse', e, s);
+      jlogger.error('httpParse$e $s');
       return null;
     }
   }

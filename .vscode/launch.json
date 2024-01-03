@@ -9,6 +9,13 @@
             "request": "launch",
             "type": "dart",
             "program": ".dart_tool/build/entrypoint/build.dart",
+            "args": ["build","-d"]
+        },
+        {
+            "name": "json_parse_model_with_params",
+            "request": "launch",
+            "type": "dart",
+            "program": ".dart_tool/build/entrypoint/build.dart",
             "args": ["build","-d","--define" ,"json_parse_model:json=host=http://www.api.com/api" ,"--define" ,"json_parse_model:json=token=abcdeffgg"]
         },
         {
