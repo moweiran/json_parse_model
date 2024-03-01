@@ -54,7 +54,7 @@ void main() {
     );
     final extensionFormatterCode =
         DartFormatter().format('${extensionCode.accept(emitter)}');
-    // print(extensionFormatterCode);
+    print(extensionFormatterCode);
     equalsDart(r'''
       extension UpcomingExt on Upcoming {
         static Upcoming fromJson(e) => Upcoming.fromJson(e);
