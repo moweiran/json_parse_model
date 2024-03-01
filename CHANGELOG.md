@@ -1,3 +1,7 @@
+## 1.2.0
+
+- add class extension for static fromJson and compute fromJson
+
 ## 1.1.1
 
 - support json data source from json file
