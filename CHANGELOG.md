@@ -1,3 +1,5 @@
+## 1.3.0
+- add copyWith params to generate copyWith method
 ## 1.2.0
 
 - add class extension for static fromJson and compute fromJson
