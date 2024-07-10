@@ -6,6 +6,7 @@ import 'package:args/command_runner.dart';
 const String hostFlag = 'host';
 const String tokenFlag = 'token';
 const String verboseFlag = 'verbose';
+const String cleanFlag = 'clean';
 
 void main(List<String> arguments) {
   CommandRunner('json', "A dart implementation of json convert to model")
@@ -37,13 +38,36 @@ class BuildCommand extends Command {
         abbr: 'v',
         help: 'Verbose output',
         defaultsTo: false,
+      )
+      ..addFlag(
+        cleanFlag,
+        abbr: 'c',
+        help: 'clean output',
+        defaultsTo: false,
       );
   }
 
   @override
   FutureOr? run() async {
-    final host = argResults?['host'] ?? "";
-    final token = argResults?['token'] ?? "";
+    // stdout.writeln(argResults?.options.toString());
+    // stdout.writeln(argResults?.toString());
+    final String host = argResults?[hostFlag] ?? "";
+    final String token = argResults?[tokenFlag] ?? "";
+    final bool verbose = argResults?[verboseFlag] ?? false;
+    final bool clean = argResults?[cleanFlag] ?? false;
+    // stdout.writeln('host=$host');
+    // stdout.writeln('token=$token');
+    // stdout.writeln('verbose=$verbose');
+    // stdout.writeln('clean=$clean');
+
+    if (clean) {
+      final cleanResult =
+          await Process.run('dart', ['run', 'build_runner', 'clean']);
+      if (verbose) {
+        stdout.write(cleanResult.stdout);
+        stderr.write(cleanResult.stderr);
+      }
+    }
     final result = await Process.run(
       'dart',
       [
@@ -57,7 +81,9 @@ class BuildCommand extends Command {
         "json_parse_model:json=token=$token"
       ],
     );
-    stdout.write(result.stdout);
-    stderr.write(result.stderr);
+    if (verbose) {
+      stdout.write(result.stdout);
+      stderr.write(result.stderr);
+    }
   }
 }

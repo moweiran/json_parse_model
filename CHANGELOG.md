@@ -1,3 +1,8 @@
+## 1.3.2
+
+- add -c option to clean output files
+- add -v option to show log
+
 ## 1.3.1
 
 - display log on cmd
