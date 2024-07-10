@@ -7,7 +7,7 @@ import 'build_config.dart';
 import 'builder.dart';
 
 Future<JsonBuildConfig> loadConfigs() async {
-  jlogger.info('start load config');
+  jlogger.info('start load config from json2model.yaml');
   final File file = File.fromUri(Uri.file("json2model.yaml"));
   if (await file.exists()) {
     final config = await file.readAsString();

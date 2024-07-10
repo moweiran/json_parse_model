@@ -17,18 +17,10 @@ class HttpParse {
     String? token,
   }) async {
     try {
-      if (host != null &&
-          host.isNotEmpty &&
-          token != null &&
-          token.isNotEmpty) {
-        jlogger.info('read buid config from options');
-        buildConfig = JsonBuildConfig(host: host, token: token);
-      } else {
-        jlogger.info('read buid config from yaml file');
-        buildConfig ??= await loadConfigs();
-      }
+      await validateBuildConfig(host, token);
 
       if (buildConfig!.host.isEmpty || buildConfig!.token.isEmpty) {
+        jlogger.error('host isEmpty or token isEmpty');
         return {};
       }
       final String url = '${buildConfig!.host}/$api';
@@ -42,6 +34,18 @@ class HttpParse {
     } catch (e, s) {
       jlogger.error('httpParse$e $s');
       return null;
+    }
+  }
+
+  Future<void> validateBuildConfig(String? host, String? token) async {
+    final argsIsNotEmpty =
+        host != null && host.isNotEmpty && token != null && token.isNotEmpty;
+    if (argsIsNotEmpty) {
+      jlogger.info('read buid config from options');
+      buildConfig = JsonBuildConfig(host: host, token: token);
+    } else {
+      jlogger.info('read buid config from yaml file');
+      buildConfig ??= await loadConfigs();
     }
   }
 }

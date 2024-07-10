@@ -44,15 +44,20 @@ class BuildCommand extends Command {
   FutureOr? run() async {
     final host = argResults?['host'] ?? "";
     final token = argResults?['token'] ?? "";
-    await Process.run('dart', [
-      'run',
-      'build_runner',
-      "build",
-      "-d",
-      "--define",
-      "json_parse_model:json=host=$host",
-      "--define",
-      "json_parse_model:json=token=$token"
-    ]);
+    final result = await Process.run(
+      'dart',
+      [
+        'run',
+        'build_runner',
+        "build",
+        "-d",
+        "--define",
+        "json_parse_model:json=host=$host",
+        "--define",
+        "json_parse_model:json=token=$token"
+      ],
+    );
+    stdout.write(result.stdout);
+    stderr.write(result.stderr);
   }
 }
