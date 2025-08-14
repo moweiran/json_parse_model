@@ -368,7 +368,7 @@ String toMapTypeMaping({
   if (typeKey == fieldName.capitalize) {
     return "'$fieldName': ${fieldName.capitalize}.toJson(),";
   } else if (typeKey == "List<${fieldName.capitalize}>") {
-    return "'$fieldName': $fieldName.map((e)=>e.toJson).toList(),";
+    return "'$fieldName': $fieldName.map((e)=>e.toJson()).toList(),";
   } else if (typeKey == "DateTime?") {
     return "'$fieldName': $fieldName?.toIso8601String(),";
   }

@@ -1,3 +1,7 @@
+## 1.3.3
+
+- fix list map parse bug
+
 ## 1.3.2
 
 - add -c option to clean output files
